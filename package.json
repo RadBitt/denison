@@ -1,0 +1,19 @@
+{
+  "name": "denison",
+  "version": "1.0.0",
+  "description": "WorkStuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RadBitt/denison.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RadBitt/denison/issues"
+  },
+  "homepage": "https://github.com/RadBitt/denison#readme"
+}
