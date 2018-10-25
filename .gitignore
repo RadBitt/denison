@@ -1,0 +1,7 @@
+/mailer
+/node_modules
+/public/bower_components
+/client-bin
+base.js
+
+Thumbs.db
