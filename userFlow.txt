@@ -1,0 +1,42 @@
+User Flow: Work Tools
+
+What can I do:
+Log Hours
+ -Create log period
+ -Add line items
+  -Add date
+  -Add hours
+  -Add descriptions
+Invoices
+ -Create invoice
+ -Choose company header
+ -Pull line items from hours
+ -Pull line items from receipts
+ -Save invoice
+ -Update invoice
+ -Delete invoice
+ -View invoice
+Estimates
+ -Create estimate
+ -Choose company header
+ -Turn to invoice
+ -Save estimate
+ -Update estimate
+ -Delete estimate
+ -View estimate
+Receipts Report
+ -Create report
+ -Choose Company Header
+ -Save report
+ -Update report
+ -Delete report
+ -View report
+
+View Vessels
+ -View Vessels Invoices
+ -View Vessels Estimates
+ -View Vessels Hours
+ 
+Add Vessels
+
+Update Vessels
