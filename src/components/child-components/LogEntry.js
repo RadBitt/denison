@@ -6,11 +6,11 @@ class LogEntry extends React.Component {
 	const logEntryObj = {
 	'Date': '10-30-2018',
 	'Job': {
-		'JobTitle': 'D520',
+		'JobVessel': 'D520-002',
 		'JobHours': '10',
 		'JobDescription': [
-		'Engine Serive', 
-		'Bow Thruster Repair'
+			'Engine Serive', 
+			'Bow Thruster Repair'
 			]
 		}
 	}
@@ -19,7 +19,7 @@ class LogEntry extends React.Component {
 		<div>
 			<h2>{logEntryObj.Date}</h2>
 			<ul>
-				<li><h3>{logEntryObj.Job.JobTitle} : {logEntryObj.Job.JobHours} Hours</h3></li>
+				<li><h3>{logEntryObj.Job.JobVessel} : {logEntryObj.Job.JobHours} Hours</h3></li>
 				<ul> 
 					<li>{logEntryObj.Job.JobDescription[0]}</li>
 					<li>{logEntryObj.Job.JobDescription[1]}</li>
