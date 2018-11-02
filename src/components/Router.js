@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter , Route, Switch, Link} from 'react-router-dom';
 import Dashboard from './Dashboard';
 import LogHours from './LogHours';
+import LogForm from './child-components/LogForm';
 import ReceiptsReport from './ReceiptsReport';
 
 const Router = () => (
@@ -15,6 +16,7 @@ const Router = () => (
 			<Switch>
 				<Route exact path="/" component={Dashboard} />
 				<Route path="/loghours" component={LogHours} />
+				<Route path="/loghoursform" component={LogForm} />
 				<Route path="/receiptsReport" component={ReceiptsReport} />
 			</Switch>
 		</div>

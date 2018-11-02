@@ -4,8 +4,9 @@ class LogForm extends React.Component {
 
 	dateInputRef = React.createRef();
 
-	saveLogData(event) {
+	saveLogData = (event) => {
 		event.preventDefault();
+		console.log('i hit the button');
 	}
 
 	render() {
