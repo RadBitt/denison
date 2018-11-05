@@ -3,7 +3,9 @@ import React from 'react';
 class ReceiptsReport extends React.Component {
 	render() {
 		return(
-			<div>ReceiptsReport.js</div>
+			<div>
+				<h1>Receipts Report</h1>
+			</div>
 		);
 	}
 }

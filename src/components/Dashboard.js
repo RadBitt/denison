@@ -3,7 +3,9 @@ import React from 'react';
 class Dashboard extends React.Component {
 	render() {
 		return(
-			<div>Dashboard.js</div>
+			<div>
+				<h1>Dashboard</h1>
+			</div>
 		);
 	}
 }

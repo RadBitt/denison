@@ -3,30 +3,19 @@ import React from 'react';
 class LogEntry extends React.Component {
 
 	render() {
-	const logEntryObj = {
-	'Date': '10-30-2018',
-	'Job': {
-		'JobVessel': 'D520-002',
-		'JobHours': '10',
-		'JobDescription': [
-			'Engine Serive', 
-			'Bow Thruster Repair'
-			]
-		}
-	}
+		const logEntryObj = this.props.details
 
-	return(
-		<div>
-			<h2>{logEntryObj.Date}</h2>
-			<ul>
-				<li><h3>{logEntryObj.Job.JobVessel} : {logEntryObj.Job.JobHours} Hours</h3></li>
-				<ul> 
-					<li>{logEntryObj.Job.JobDescription[0]}</li>
-					<li>{logEntryObj.Job.JobDescription[1]}</li>
+		return(
+			<div>
+				<h2>{logEntryObj.date}</h2>
+				<ul>
+					<li><h3>{logEntryObj.job.jobVessel} : {logEntryObj.job.jobTitle} : {logEntryObj.job.jobHours} Hours</h3></li>
+					<ul> 
+						<li>{logEntryObj.job.jobDescriptionArray[0]}</li>
+					</ul>
 				</ul>
-			</ul>
-		</div>
-	);
+			</div>
+		);
 	}
 }
 
