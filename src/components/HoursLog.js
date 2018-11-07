@@ -15,20 +15,20 @@ class HoursLog extends React.Component {
 					} />
 					<Route path={this.props.match}
 					render={
-						() => 							<div>
-								<h1>Hours Log</h1>
-								<ul>
-									<li><Link to="/hoursLog/createLogEntry">New Log Form</Link></li>
-								</ul>
-								{Object.keys(this.props.logEntries).map(key => (
-						          <LogEntry
-						            key={key}
-						            index={key}
-						            details={this.props.logEntries[key]}
-						          />
-						        ))}
-							</div>
-
+						() => 
+						<div>
+							<h1>Hours Log</h1>
+							<ul>
+								<li><Link to="/hoursLog/createLogEntry">New Log Form</Link></li>
+							</ul>
+							{Object.keys(this.props.logEntries).map(key => (
+					          <LogEntry
+					            key={key}
+					            index={key}
+					            details={this.props.logEntries[key]}
+					          />
+					        ))}
+						</div>
 					} />
 				</Switch>
 			</div>

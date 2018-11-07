@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
-import VesselEntry from './child-components/VesselEntry';
 import CreateSystemsCheck from './child-components/CreateSystemsCheck';
 import VesselList from './child-components/VesselList';
 

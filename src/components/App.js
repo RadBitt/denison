@@ -5,13 +5,22 @@ import HoursLog from './HoursLog';
 import ReimbursmentReport from './ReimbursmentReport';
 import SystemsCheck from './SystemsCheck';
 import Vessels from './Vessels';
+import { base, firebaseApp } from '../base';
 
 class App extends React.Component {
 
 	state = {
 		logEntries: {},
-		receiptReports: {}
+		vessels: {}
 	};
+
+	componentDidMount() {
+
+		this.ref = base.syncState('vessels', {
+			context: this,
+			state: 'vessels',
+		});
+	}
 
 	addLogEntry = log => {
 		const logEntries = {...this.state.logEntries};
