@@ -34,7 +34,7 @@ class CreateSystemsCheck extends React.Component {
 			<div>
 				<h1>New Systems Check</h1>
 				<form onSubmit={this.saveLogData}>
-			{/* Systems Check Details */}
+			<h2> Systems Check Details </h2>
 				<div className="form-group">
 					<label htmlFor="technician">Technician</label>
 					<input ref={this.technician} type="text" className="form-control" id="technician" placeholder="OK" />
@@ -43,28 +43,28 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="dateOfReport">Date Of Report</label>
 					<input ref={this.dateOfReport} type="text" className="form-control" id="dateOfReport" placeholder="OK" />
 				</div>
-			{/* Vessel Information */}
-				<div className-"form-group">
+			<h2> Vessel Information </h2>
+				<div className="form-group">
 					<label htmlFor="owner">Owner</label>
 					<input ref={this.owner} type="text" className="form-control" id="owner" placeholder="OK" />
 				</div>
-				<div className-"form-group">
+				<div className="form-group">
 					<label htmlFor="vesselModel">Vessel Model</label>
 					<input ref={this.vesselModel} type="text" className="form-control" id="vesselModel" placeholder="OK" />
 				</div>
-				<div className-"form-group">
+				<div className="form-group">
 					<label htmlFor="hullNumber">Hull</label>
 					<input ref={this.hullNumber} type="text" className="form-control" id="hullNumber" placeholder="OK" />
 				</div>
-				<div className-"form-group">
+				<div className="form-group">
 					<label htmlFor="engineSerial">Engine Serial</label>
 					<input ref={this.engineSerial} type="text" className="form-control" id="engineSerial" placeholder="OK" />
 				</div>
-				<div className-"form-group">
+				<div className="form-group">
 					<label htmlFor="engineHours">Engine Hours</label>
 					<input ref={this.engineHours} type="text" className="form-control" id="engineHours" placeholder="OK" />
 				</div>
-			{/* Hull Condition */}
+			<h2> Hull Condition </h2>
 				<div className="form-group">	
 					<label htmlFor="waterlineCondition">Waterline condition</label>
 					<input ref={this.waterlineCondition} type="text" className="form-control" id="waterlineCondition" placeholder="OK"/>
@@ -77,7 +77,7 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="deckHardware">Deck hardware</label>
 					<input ref={this.deckHardware} type="text" className="form-control" id="deckHardware" placeholder="OK"/>
 				</div>
-			{/* Rigging */}
+			<h2> Rigging </h2>
 				<div className="form-group">
 					<label htmlFor="hardwareCondition">Hardware Condition</label>
 					<input ref={this.hardwareCondition} type="text" className="form-control" id="hardwareCondition" placeholder="OK"/>
@@ -86,7 +86,7 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="riggingCondition">Rigging Condition</label>
 					<input ref={this.riggingCondition} type="text" className="form-control" id="riggingCondition" placeholder="OK"/>
 				</div>
-			{/* Helm */}
+			<h2> Helm </h2>
 				<div className="form-group">
 					<label htmlFor="steeringSystem">Steering System</label>
 					<input ref={this.steeringSystem} type="text" className="form-control" id="steeringSystem" placeholder="OK"/>
@@ -95,7 +95,7 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="electronicsCondition">Electronics Condition</label>
 					<input ref={this.electronicsCondition} type="text" className="form-control" id="electronicsCondition" placeholder="OK"/>
 				</div>
-			{ /* Engine Compartment */}
+			<h2> Engine Compartment </h2>
 				<div className="form-group">
 					<label htmlFor="thruhulls">Thru-hulls </label>
 					<input ref={this.thruhulls} type="text" className="form-control" id="thruhulls" placeholder="Note Condition" />
@@ -168,7 +168,7 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="exhaustSystem">Exhaust System</label>
 					<input ref={this.exhaustSystem} type="text" className="form-control" id="exhaustSystem" placeholder="Note Condition" />
 				</div>
-			{/* Run Engine */}
+			<h2> Run Engine </h2>
 				<div className="form-group">
 					<label htmlFor="engineAlarms">Engine Alarms</label>
 					<input ref={this.engineAlarms} type="text" className="form-control" id="engineAlarms" placeholder="OK" />
@@ -189,7 +189,7 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="transmission">Transmission</label>
 					<input ref={this.transmission} type="text" className="form-control" id="transmission" placeholder="OK" />
 				</div>
-			{/* Electrical System */}
+			<h2> Electrical System </h2>
 				<div className="form-group">
 					<label htmlFor="shorePowerChord">Shore Power Chord</label>
 					<input ref={this.shorePowerChord} type="text" className="form-control" id="shorePowerChord" placeholder="OK" />
@@ -242,12 +242,12 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="gauges">Gauges</label>
 					<input ref={this.gauges} type="text" className="form-control" id="gauges" placeholder="OK" />
 				</div>
-			{/* Lights */}
+			<h2> Lights </h2>
 				<div className="form-group">
 					<label htmlFor="lights">Lights</label>
 					<input ref={this.lights} type="text" className="form-control" id="lights" placeholder="OK" />
 				</div>
-			{/* Audio System */}
+			<h2> Audio System </h2>
 				<div className="form-group">
 					<label htmlFor="headUnit">Head Unit</label>
 					<input ref={this.headUnit} type="text" className="form-control" id="headUnit" placeholder="OK" />
@@ -256,7 +256,7 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="speakers">Speakers</label>
 					<input ref={this.speakers} type="text" className="form-control" id="speakers" placeholder="OK" />
 				</div>
-			{/* Generator */}
+			<h2> Generator </h2>
 				<div className="form-group">
 					<label htmlFor="genThruHulls">Gen Thru hulls</label>
 					<input ref={this.genThruHulls} type="text" className="form-control" id="genThruHulls" placeholder="OK" />
@@ -317,7 +317,7 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="genExhaustSystem">Gen Exhaust System</label>
 					<input ref={this.genExhaustSystem} type="text" className="form-control" id="genExhaustSystem" placeholder="OK" />
 				</div>
-			{/* Run Generator Engine */}
+			<h2> Run Generator Engine </h2>
 				<div className="form-group">
 					<label htmlFor="genEngineAlarms">Gen Engine Alarms</label>
 					<input ref={this.genEngineAlarms} type="text" className="form-control" id="genEngineAlarms" placeholder="OK" />
@@ -334,7 +334,7 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="genExhaustColor">Gen Exhaust Color</label>
 					<input ref={this.genExhaustColor} type="text" className="form-control" id="genExhaustColor" placeholder="OK" />
 				</div>
-			{/* Navigation Equipment */}
+			<h2> Navigation Equipment </h2>
 				<div className="form-group">
 					<label htmlFor="vhf">VHF</label>
 					<input ref={this.vhf} type="text" className="form-control" id="vhf" placeholder="OK" />
@@ -371,7 +371,7 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="autopilot">Autopilot</label>
 					<input ref={this.autopilot} type="text" className="form-control" id="autopilot" placeholder="OK" />
 				</div>
-			{/*Water Systems*/}
+			<h2>Water Systems</h2>
 				<div className="form-group">
 					<label htmlFor="testToilets">Test Toilets</label>
 					<input ref={this.testToilets} type="text" className="form-control" id="testToilets" placeholder="OK" />
@@ -408,7 +408,7 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="reportLeaks">Report Leaks</label>
 					<input ref={this.reportLeaks} type="text" className="form-control" id="reportLeaks" placeholder="OK" />
 				</div>
-			{/* Autopilot */}
+			<h2> Autopilot </h2>
 				<div className="form-group">
 					<label htmlFor="steering">Steering</label>
 					<input ref={this.steering} type="text" className="form-control" id="steering" placeholder="OK" />
@@ -429,7 +429,7 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="autopilot">Autopilot</label>
 					<input ref={this.autopilot} type="text" className="form-control" id="autopilot" placeholder="OK" />
 				</div>
-			{/* DC Equipment */}
+			<h2> DC Equipment </h2>
 				<div className="form-group">
 					<label htmlFor="waterPressure">Water Pressure</label>
 					<input ref={this.waterPressure} type="text" className="form-control" id="waterPressure" placeholder="OK" />
@@ -458,7 +458,7 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="propane">Propane</label>
 					<input ref={this.propane} type="text" className="form-control" id="propane" placeholder="OK" />
 				</div>
-			{/* AC Appliances */}
+			<h2> AC Appliances </h2>
 				<div className="form-group">
 					<label htmlFor="acRefrigerator">AC Refrigerator</label>
 					<input ref={this.acRefrigerator} type="text" className="form-control" id="acRefrigerator" placeholder="OK" />
@@ -467,7 +467,7 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="microwave">Microwave</label>
 					<input ref={this.microwave} type="text" className="form-control" id="microwave" placeholder="OK" />
 				</div>
-			{/* Anchor Equipment */}
+			<h2> Anchor Equipment </h2>
 				<div className="form-group">
 					<label htmlFor="anchorWindlass">Anchor Windlass</label>
 					<input ref={this.anchorWindlass} type="text" className="form-control" id="anchorWindlass" placeholder="OK" />
@@ -476,7 +476,7 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="anchorGear">Anchor Gear</label>
 					<input ref={this.anchorGear} type="text" className="form-control" id="anchorGear" placeholder="OK" />
 				</div>
-			{/* Water Heater */}
+			<h2> Water Heater </h2>
 				<div className="form-group">
 					<label htmlFor="testElectrical">Test Electrical</label>
 					<input ref={this.testElectrical} type="text" className="form-control" id="testElectrical" placeholder="OK" />
@@ -485,7 +485,7 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="testConvection">Test Convection</label>
 					<input ref={this.testConvection} type="text" className="form-control" id="testConvection" placeholder="OK" />
 				</div>
-			{/* Air Conditioner */}
+			<h2> Air Conditioner </h2>
 				<div className="form-group">
 					<label htmlFor="testHeat">Test Heat</label>
 					<input ref={this.testHeat} type="text" className="form-control" id="testHeat" placeholder="OK" />
