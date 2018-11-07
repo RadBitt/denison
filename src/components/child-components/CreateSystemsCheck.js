@@ -34,6 +34,15 @@ class CreateSystemsCheck extends React.Component {
 			<div>
 				<h1>New Systems Check</h1>
 				<form onSubmit={this.saveLogData}>
+			{/* Systems Check Details */}
+				<div className="form-group">
+					<label htmlFor="technician">Technician</label>
+					<input ref={this.technician} type="text" className="form-control" id="technician" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="dateOfReport">Date Of Report</label>
+					<input ref={this.dateOfReport} type="text" className="form-control" id="dateOfReport" placeholder="OK" />
+				</div>
 			{/* Vessel Information */}
 				<div className-"form-group">
 					<label htmlFor="owner">Owner</label>
@@ -399,179 +408,94 @@ class CreateSystemsCheck extends React.Component {
 					<label htmlFor="reportLeaks">Report Leaks</label>
 					<input ref={this.reportLeaks} type="text" className="form-control" id="reportLeaks" placeholder="OK" />
 				</div>
+			{/* Autopilot */}
+				<div className="form-group">
+					<label htmlFor="steering">Steering</label>
+					<input ref={this.steering} type="text" className="form-control" id="steering" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="chain">Chain</label>
+					<input ref={this.chain} type="text" className="form-control" id="chain" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="hyrdraulic">Hyrdraulic</label>
+					<input ref={this.hyrdraulic} type="text" className="form-control" id="hyrdraulic" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="shaft">Shaft</label>
+					<input ref={this.shaft} type="text" className="form-control" id="shaft" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="autopilot">Autopilot</label>
+					<input ref={this.autopilot} type="text" className="form-control" id="autopilot" placeholder="OK" />
+				</div>
+			{/* DC Equipment */}
+				<div className="form-group">
+					<label htmlFor="waterPressure">Water Pressure</label>
+					<input ref={this.waterPressure} type="text" className="form-control" id="waterPressure" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="bilgePumps">Bilge Pumps</label>
+					<input ref={this.bilgePumps} type="text" className="form-control" id="bilgePumps" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="dcRefrigerator">DC Refrigerator</label>
+					<input ref={this.dcRefrigerator} type="text" className="form-control" id="dcRefrigerator" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="tv">TVs</label>
+					<input ref={this.tv} type="text" className="form-control" id="tv" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="dvd">DVD</label>
+					<input ref={this.dvd} type="text" className="form-control" id="dvd" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="stove">Stove</label>
+					<input ref={this.stove} type="text" className="form-control" id="stove" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="propane">Propane</label>
+					<input ref={this.propane} type="text" className="form-control" id="propane" placeholder="OK" />
+				</div>
+			{/* AC Appliances */}
+				<div className="form-group">
+					<label htmlFor="acRefrigerator">AC Refrigerator</label>
+					<input ref={this.acRefrigerator} type="text" className="form-control" id="acRefrigerator" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="microwave">Microwave</label>
+					<input ref={this.microwave} type="text" className="form-control" id="microwave" placeholder="OK" />
+				</div>
+			{/* Anchor Equipment */}
+				<div className="form-group">
+					<label htmlFor="anchorWindlass">Anchor Windlass</label>
+					<input ref={this.anchorWindlass} type="text" className="form-control" id="anchorWindlass" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="anchorGear">Anchor Gear</label>
+					<input ref={this.anchorGear} type="text" className="form-control" id="anchorGear" placeholder="OK" />
+				</div>
+			{/* Water Heater */}
+				<div className="form-group">
+					<label htmlFor="testElectrical">Test Electrical</label>
+					<input ref={this.testElectrical} type="text" className="form-control" id="testElectrical" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="testConvection">Test Convection</label>
+					<input ref={this.testConvection} type="text" className="form-control" id="testConvection" placeholder="OK" />
+				</div>
+			{/* Air Conditioner */}
+				<div className="form-group">
+					<label htmlFor="testHeat">Test Heat</label>
+					<input ref={this.testHeat} type="text" className="form-control" id="testHeat" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="testCold">Test Cold</label>
+					<input ref={this.testCold} type="text" className="form-control" id="testCold" placeholder="OK" />
+				</div>
 				<button type="submit">Submit</button>
 				</form>
-Vessel 
-
-Technician
-Date of Report
-
-Vessel Information
-	Owner
-	Vessel Model
-	Hull
-	Engine Serial
-	Engine Hours
-
-Hull Condition
-	Waterline condition
-	Hull damage
-	Deck hardware
-
-	Notes
-
-Rigging
-	Hardware condition
-	Rigging condition
-
-	Notes
-
-Helm
-	Steering system
-	Electronics condition
-
-Engine Compartment (Note Condition)
-	Thru-hulls 
-	Sea Strainer
-	Starter Battery Cables
-	Alternator Battery Cables
-	Grounding Cables
-	Engine Harness
-	Aux Wiring
-	Bilge 
-	Shaft 
-	Oil level
-	Transoil level
-	Coolant level
-	Expansion tank level
-	Belts 
-	Oil cooler 
-	Water cooler 
-	Raw water pump
-	Exhaust System
-
-Run Engine
-	Engine Alarms
-	Run Engine
-	Exhaust Water
-	Exhaust Color
-	Transmission
-
-	Notes
-
-Electrical System
-	Shore Power Chord
-	Shore Power Recepitcle
-	Polarity
-	Charging System
-	Inverter System
-	Battery Banks
-	Battery Banks Secure
-	Battery Cables Secure
-	Battery Cables
-	Battery Switches
-	DC Electrical Panel
-	AC Electrical Panel
-	Gauges
-
-	Notes
-
-Lights
-	Test all lights
-
-	Notes
-
-Audio System
-	HeadUnit
-	Speakers
-
-Generator
-	Gen Thru hulls
-	Gen Sea Strainer
-	Gen Starter Battery Cables
-	Gen Generator Cables
-	Gen Grounding Cables
-	Gen Engine Harness
-	Gen Aux Wiring
-	Gen Bilge
-	Gen Oil level
-	Gen Coolant level
-	Gen Expansion tank level
-	Gen Belts
-	Gen Oil cooler
-	Gen Water cooler
-	Gen Raw water pump
-	Gen Exhaust System
-
-Run Generator
-	Gen Engine Alarms
-	Gen Run Engine
-	Gen Exhaust Water
-	Gen Exhaust Color
-
-	Notes
-
-Navigation Equipment
-	VHF
-	MFDs
-	Compasses
-	Nav Lights
-	Wind
-	Depth
-	GPS
-	AIS
-	Autopilot
-
-Water systems
-	Test Toilets
-	Macerator Pump
-	Holding Tank
-	Water Supply
-	Thru Hulls
-	Water Tank
-	Water Hoses
-	Sanitary Hoses
-	Report Leaks
-
-Steering System
-	Steering
-	Chain
-	Hyrdraulic
-	Shaft
-	Autopilot mechanical
-	Autopilot electrical
-
-	Notes
-
-DC Equipment
-	Water Pressure
-	Bilge Pumps
-	Float Switches
-	Refrigerator
-	TVs
-	DVD Player
-	Stove
-	Propane System
-
-AC Appliances
-	Refrigerator
-	Microwave
-
-	Notes
-
-Windlass
-	Test windlass
-	Rode
-
-WaterHeater
-	Test electrical
-	Test convection
-
-Air Conditioning
-	Test heat
-	Test cold
-	Thru-hulls
-
 			</div>
 		);
 	}

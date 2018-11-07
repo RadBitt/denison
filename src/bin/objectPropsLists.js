@@ -3,104 +3,153 @@
     <input ref={this.date} type="text" className="form-control" id="date" placeholder="mm/dd/yyyy" />
  </div>
 
-owner
-vesselModel
-hullNumber
-engineSerial
-engineHours
+vessel:
+technician:
+dateOfReport:
 
-waterlineCondition
-hullDamage
-deckHardware
+vesselInformation
+	owner:
+	vesselModel:
+	hullNumber:
+	engineSerial:
+	engineHours:
 
-hardwareCondition
-riggingCondition
+vullCondition
+	waterlineCondition:
+	hullDamage:
+	deckHardware:
+
+riggingHardware
+	hardwareCondition:
+	riggingCondition:
+	
+helmArea
+	steeringSystem:
+	electronicsCondition:
+
+engineCompartment
+	thruhulls:
+	seaStrainer:
+	starterBatteryCables:
+	alternatorBatteryCables:
+	groundingCables:
+	engineHarness:
+	auxWiring:
+	bilge:
+	shaft:
+	oillevel:
+	transoillevel:
+	coolantlevel:
+	expansiontanklevel:
+	belts:
+	oilcooler:
+	watercooler:
+	rawwaterpump:
+	exhaustSystem:
+
+runEngine
+	engineAlarms:
+	runEngine:
+	exhaustWater:
+	exhaustColor:
+	transmission:
+
+electricalSystem
+	shorePowerChord:
+	shorePowerRecepitcle:
+	polarity:
+	chargingSystem:
+	inverterSystem:
+	batteryBanks:
+	batteryBanksSecure:
+	batteryCablesSecure:
+	batteryCables:
+	batterySwitches:
+	dCElectricalPanel:
+	aCElectricalPanel:
+	gauges:
+
+allLights
+	lights:
+
+audioSystem
+	headUnit:
+	speakers:
+
+mainGenerator
+	genThruHulls:
+	genSeaStrainer:
+	genStarterBatteryCables:
+	generatorCables:
+	genGroundingCables:
+	genEngineHarness:
+	genAuxWiring:
+	genBilge:
+	genOilLevel:
+	genCoolantLevel:
+	genExpansionTankLevel:
+	genBelts:
+	genOilCooler:
+	genWaterCooler:
+	genRawWaterPump:
+	genExhaustSystem:
+
+runGenerator
+	genEngineAlarms:
+	genRunEngine:
+	genExhaustWater:
+	genExhaustColor:
+
+navigationEquipment
+	vhf:
+	mfds:
+	compasses:
+	navLights:
+	wind:
+	depth:
+	gps:
+	ais:
+	autopilot:
+
+waterSystems
+	testToilets:
+	maceratorPump:
+	holdingTank:
+	waterSupply:
+	thruHulls:
+	waterTank:
+	waterHoses:
+	sanitaryHoses:
+	reportLeaks:
 
 steeringSystem
-electronicsCondition
+	steering:
+	chain:
+	hyrdraulic:
+	shaft:
+	autopilot:
 
-thruhulls
-seaStrainer
-starterBatteryCables
-alternatorBatteryCables
-groundingCables
-engineHarness
-auxWiring
-bilge
-shaft
-oillevel
-transoillevel
-coolantlevel
-expansiontanklevel
-belts
-oilcooler
-watercooler
-rawwaterpump
-exhaustSystem
+dCEquipment
+	waterPressure:
+	bilgePumps:
+	dcRefrigerator:
+	tv:
+	dvd:
+	stove:
+	propane:
 
-engineAlarms
-runEngine
-exhaustWater
-exhaustColor
-transmission
+aCAppliances
+	acRefrigerator:
+	microwave:
 
-shorePowerChord
-shorePowerRecepitcle
-polarity
-chargingSystem
-inverterSystem
-batteryBanks
-batteryBanksSecure
-batteryCablesSecure
-batteryCables
-batterySwitches
-dCElectricalPanel
-aCElectricalPanel
-gauges
+anchorEquipment
+	anchorWindlass:
+	anchorGear:
 
-lights
+waterHeater
+	testElectrical:
+	testConvection:
 
-headUnit
-speakers
-
-genThruHulls
-genSeaStrainer
-genStarterBatteryCables
-generatorCables
-genGroundingCables
-genEngineHarness
-genAuxWiring
-genBilge
-genOilLevel
-genCoolantLevel
-genExpansionTankLevel
-genBelts
-genOilCooler
-genWaterCooler
-genRawWaterPump
-genExhaustSystem
-
-genEngineAlarms
-genRunEngine
-genExhaustWater
-genExhaustColor
-
-vhf
-mfds
-compasses
-navLights
-wind
-depth
-gps
-ais
-autopilot
-
-testToilets
-maceratorPump
-holdingTank
-waterSupply
-thruHulls
-waterTank
-waterHoses
-sanitaryHoses
-reportLeaks
+airConditioning
+	testHeat:
+	testCold:
