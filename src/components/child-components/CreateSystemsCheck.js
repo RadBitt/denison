@@ -249,72 +249,159 @@ class CreateSystemsCheck extends React.Component {
 				</div>
 			{/* Generator */}
 				<div className="form-group">
-					<label htmlFor="thruHulls">Thru hulls</label>
-					<input ref={this.thruHulls} type="text" className="form-control" id="thruHulls" placeholder="OK" />
+					<label htmlFor="genThruHulls">Gen Thru hulls</label>
+					<input ref={this.genThruHulls} type="text" className="form-control" id="genThruHulls" placeholder="OK" />
 				</div>
 				<div className="form-group">
-					<label htmlFor="seaStrainer">Sea Strainer</label>
-					<input ref={this.seaStrainer} type="text" className="form-control" id="seaStrainer" placeholder="OK" />
+					<label htmlFor="genSeaStrainer">Gen Sea Strainer</label>
+					<input ref={this.genSeaStrainer} type="text" className="form-control" id="genSeaStrainer" placeholder="OK" />
 				</div>
 				<div className="form-group">
-					<label htmlFor="tarterBatteryCables">Starter Battery Cables</label>
-					<input ref={this.tarterBatteryCables} type="text" className="form-control" id="tarterBatteryCables" placeholder="OK" />
+					<label htmlFor="genStarterBatteryCables">Gen Starter Battery Cables</label>
+					<input ref={this.genStarterBatteryCables} type="text" className="form-control" id="genStarterBatteryCables" placeholder="OK" />
 				</div>
 				<div className="form-group">
 					<label htmlFor="generatorCables">Generator Cables</label>
 					<input ref={this.generatorCables} type="text" className="form-control" id="generatorCables" placeholder="OK" />
 				</div>
 				<div className="form-group">
-					<label htmlFor="groundingCables">Grounding Cables</label>
-					<input ref={this.groundingCables} type="text" className="form-control" id="groundingCables" placeholder="OK" />
+					<label htmlFor="genGroundingCables">Gen Grounding Cables</label>
+					<input ref={this.genGroundingCables} type="text" className="form-control" id="genGroundingCables" placeholder="OK" />
 				</div>
 				<div className="form-group">
-					<label htmlFor="engineHarness">Engine Harness</label>
-					<input ref={this.engineHarness} type="text" className="form-control" id="engineHarness" placeholder="OK" />
+					<label htmlFor="genEngineHarness">Gen Engine Harness</label>
+					<input ref={this.genEngineHarness} type="text" className="form-control" id="genEngineHarness" placeholder="OK" />
 				</div>
 				<div className="form-group">
-					<label htmlFor="auxWiring">Aux Wiring</label>
-					<input ref={this.auxWiring} type="text" className="form-control" id="auxWiring" placeholder="OK" />
+					<label htmlFor="genAuxWiring">Gen Aux Wiring</label>
+					<input ref={this.genAuxWiring} type="text" className="form-control" id="genAuxWiring" placeholder="OK" />
 				</div>
 				<div className="form-group">
-					<label htmlFor="bilge">Bilge</label>
-					<input ref={this.bilge} type="text" className="form-control" id="bilge" placeholder="OK" />
+					<label htmlFor="genBilge">Gen Bilge</label>
+					<input ref={this.genBilge} type="text" className="form-control" id="genBilge" placeholder="OK" />
 				</div>
 				<div className="form-group">
-					<label htmlFor="oilLevel">Oil level</label>
-					<input ref={this.oilLevel} type="text" className="form-control" id="oilLevel" placeholder="OK" />
+					<label htmlFor="genOilLevel">Gen Oil level</label>
+					<input ref={this.genOilLevel} type="text" className="form-control" id="genOilLevel" placeholder="OK" />
 				</div>
 				<div className="form-group">
-					<label htmlFor="coolantLevel">Coolant level</label>
-					<input ref={this.coolantLevel} type="text" className="form-control" id="coolantLevel" placeholder="OK" />
+					<label htmlFor="genCoolantLevel">Gen Coolant level</label>
+					<input ref={this.genCoolantLevel} type="text" className="form-control" id="genCoolantLevel" placeholder="OK" />
 				</div>
 				<div className="form-group">
-					<label htmlFor="expansionTankLevel">Expansion tank level</label>
-					<input ref={this.expansionTankLevel} type="text" className="form-control" id="expansionTankLevel" placeholder="OK" />
+					<label htmlFor="genExpansionTankLevel">Gen Expansion Tank Level</label>
+					<input ref={this.genExpansionTankLevel} type="text" className="form-control" id="genExpansionTankLevel" placeholder="OK" />
 				</div>
 				<div className="form-group">
-					<label htmlFor="belts">Belts</label>
-					<input ref={this.belts} type="text" className="form-control" id="belts" placeholder="OK" />
+					<label htmlFor="genBelts">Gen Belts</label>
+					<input ref={this.genBelts} type="text" className="form-control" id="genBelts" placeholder="OK" />
 				</div>
 				<div className="form-group">
-					<label htmlFor="oilCooler">Oil cooler</label>
-					<input ref={this.oilCooler} type="text" className="form-control" id="oilCooler" placeholder="OK" />
+					<label htmlFor="genHeatExchanger">Gen Heat Exchanger</label>
+					<input ref={this.genHeatExchanger} type="text" className="form-control" id="genHeatExchanger" placeholder="OK" />
 				</div>
 				<div className="form-group">
-					<label htmlFor="waterCooler">Water cooler</label>
-					<input ref={this.waterCooler} type="text" className="form-control" id="waterCooler" placeholder="OK" />
+					<label htmlFor="genRawWaterPump">Gen Raw Water pump</label>
+					<input ref={this.genRawWaterPump} type="text" className="form-control" id="genRawWaterPump" placeholder="OK" />
 				</div>
 				<div className="form-group">
-					<label htmlFor="rawWaterPump">Raw water pump</label>
-					<input ref={this.rawWaterPump} type="text" className="form-control" id="rawWaterPump" placeholder="OK" />
+					<label htmlFor="genExhaustSystem">Gen Exhaust System</label>
+					<input ref={this.genExhaustSystem} type="text" className="form-control" id="genExhaustSystem" placeholder="OK" />
+				</div>
+			{/* Run Generator Engine */}
+				<div className="form-group">
+					<label htmlFor="genEngineAlarms">Gen Engine Alarms</label>
+					<input ref={this.genEngineAlarms} type="text" className="form-control" id="genEngineAlarms" placeholder="OK" />
 				</div>
 				<div className="form-group">
-					<label htmlFor="exhaustSystem">Exhaust System</label>
-					<input ref={this.exhaustSystem} type="text" className="form-control" id="exhaustSystem" placeholder="OK" />
+					<label htmlFor="genRunEngine">Gen Run Engine</label>
+					<input ref={this.genRunEngine} type="text" className="form-control" id="genRunEngine" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="genExhaustWater">Gen Exhaust Water</label>
+					<input ref={this.genExhaustWater} type="text" className="form-control" id="genExhaustWater" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="genExhaustColor">Gen Exhaust Color</label>
+					<input ref={this.genExhaustColor} type="text" className="form-control" id="genExhaustColor" placeholder="OK" />
+				</div>
+			{/* Navigation Equipment */}
+				<div className="form-group">
+					<label htmlFor="vhf">VHF</label>
+					<input ref={this.vhf} type="text" className="form-control" id="vhf" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="mfds">MFDs</label>
+					<input ref={this.mfds} type="text" className="form-control" id="mfds" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="compasses">Compasses</label>
+					<input ref={this.compasses} type="text" className="form-control" id="compasses" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="navLights">Nav Lights</label>
+					<input ref={this.navLights} type="text" className="form-control" id="navLights" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="wind">Wind</label>
+					<input ref={this.wind} type="text" className="form-control" id="wind" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="depth">Depth</label>
+					<input ref={this.depth} type="text" className="form-control" id="depth" placeholder="OK" />
+				</div>   
+				<div className="form-group">
+					<label htmlFor="gps">GPS</label>
+					<input ref={this.gps} type="text" className="form-control" id="gps" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="ais">AIS</label>
+					<input ref={this.ais} type="text" className="form-control" id="ais" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="autopilot">Autopilot</label>
+					<input ref={this.autopilot} type="text" className="form-control" id="autopilot" placeholder="OK" />
+				</div>
+			{/*Water Systems*/}
+				<div className="form-group">
+					<label htmlFor="testToilets">Test Toilets</label>
+					<input ref={this.testToilets} type="text" className="form-control" id="testToilets" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="maceratorPump">Macerator Pump</label>
+					<input ref={this.maceratorPump} type="text" className="form-control" id="maceratorPump" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="holdingTank">Holding Tank</label>
+					<input ref={this.holdingTank} type="text" className="form-control" id="holdingTank" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="waterSupply">Water Supply</label>
+					<input ref={this.waterSupply} type="text" className="form-control" id="waterSupply" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="thruHulls">Thru Hulls</label>
+					<input ref={this.thruHulls} type="text" className="form-control" id="thruHulls" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="waterTank">Water Tank</label>
+					<input ref={this.waterTank} type="text" className="form-control" id="waterTank" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="waterHoses">Water Hoses</label>
+					<input ref={this.waterHoses} type="text" className="form-control" id="waterHoses" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="sanitaryHoses">Sanitary Hoses</label>
+					<input ref={this.sanitaryHoses} type="text" className="form-control" id="sanitaryHoses" placeholder="OK" />
+				</div>
+				<div className="form-group">
+					<label htmlFor="reportLeaks">Report Leaks</label>
+					<input ref={this.reportLeaks} type="text" className="form-control" id="reportLeaks" placeholder="OK" />
 				</div>
 				<button type="submit">Submit</button>
 				</form>
-Vessel Systems Report
+Vessel 
 
 Technician
 Date of Report
@@ -399,53 +486,30 @@ Audio System
 	Speakers
 
 Generator
-	Thru hulls
-	Sea Strainer
-	Starter Battery Cables
-	Generator Cables
-	Grounding Cables
-	Engine Harness
-	Aux Wiring
-	Bilge
-	Oil level
-	Coolant level
-	Expansion tank level
-	Belts
-	Oil cooler
-	Water cooler
-	Raw water pump
-	Exhaust System
+	Gen Thru hulls
+	Gen Sea Strainer
+	Gen Starter Battery Cables
+	Gen Generator Cables
+	Gen Grounding Cables
+	Gen Engine Harness
+	Gen Aux Wiring
+	Gen Bilge
+	Gen Oil level
+	Gen Coolant level
+	Gen Expansion tank level
+	Gen Belts
+	Gen Oil cooler
+	Gen Water cooler
+	Gen Raw water pump
+	Gen Exhaust System
 
 Run Generator
-	Run Generator
-	Check exhaust water
+	Gen Engine Alarms
+	Gen Run Engine
+	Gen Exhaust Water
+	Gen Exhaust Color
 
 	Notes
-
-Black Water System
-	Test all toilets
-	Macerator
-	Holding Tank
-	Water supply
-	Thru Hulls
-
-Grey Water Sytem
-	Thru-hulls
-	Test sumps
-	Test drains
-
-Fresh Water System
-	Thru-Hulls
-	Water Tank
-
-WaterHeater
-	Test electrical
-	Test convection
-
-Air Conditioning
-	Test heat
-	Test cold
-	Thru-hulls
 
 Navigation Equipment
 	VHF
@@ -457,6 +521,17 @@ Navigation Equipment
 	GPS
 	AIS
 	Autopilot
+
+Water systems
+	Test Toilets
+	Macerator Pump
+	Holding Tank
+	Water Supply
+	Thru Hulls
+	Water Tank
+	Water Hoses
+	Sanitary Hoses
+	Report Leaks
 
 Steering System
 	Steering
@@ -487,6 +562,15 @@ AC Appliances
 Windlass
 	Test windlass
 	Rode
+
+WaterHeater
+	Test electrical
+	Test convection
+
+Air Conditioning
+	Test heat
+	Test cold
+	Thru-hulls
 
 			</div>
 		);
