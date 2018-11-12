@@ -14,7 +14,7 @@ class SytemsCheck extends React.Component {
 				<Switch>
 					<Route path={this.props.match + "/createSystemsCheck" }
 					render={
-						() => <CreateSystemsCheck />
+						() => <CreateSystemsCheck match={this.props.match} />
 					} />
 					<Route path={this.props.match}
 					render={
