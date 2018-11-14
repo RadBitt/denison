@@ -11,16 +11,25 @@ class App extends React.Component {
 
 	state = {
 		logEntries: {},
-		vessels: {}
+		vessels: {},
+		tempSysCheckForm: {}
 	};
 
 	componentDidMount() {
-
 		this.ref = base.syncState('vessels', {
 			context: this,
 			state: 'vessels',
 		});
-	}
+	};
+
+	addVessel = vessel => {
+		console.log(vessel);
+		const vessels = {...this.state.vessels};
+		vessels[`vessel-${Date.now()}`] = vessel;
+		this.setState({
+			vessels
+		});
+	};
 
 	addLogEntry = log => {
 		const logEntries = {...this.state.logEntries};
@@ -28,7 +37,12 @@ class App extends React.Component {
 		this.setState({
 			logEntries
 		});
-	} 
+	};
+
+	updateSystemsCheckField = field => {
+		const tempSysCheckForm = {...this.state.tempSysCheckForm};
+	};
+
 
 	render() {
 		return(
@@ -56,7 +70,7 @@ class App extends React.Component {
 								() => <SystemsCheck match="/systemsCheck"/>
 							} />
 							<Route path="/vessels" render={
-								() => <Vessels match="/vessels"/>
+								() => <Vessels addVessel={this.addVessel} match="/vessels"/>
 							} />
 						</Switch>
 					</div>

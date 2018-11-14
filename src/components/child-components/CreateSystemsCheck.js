@@ -14,33 +14,6 @@ import ScAcAppliances from './SystemsCheckChildrenForms/ScAcAppliances';
 
 class CreateSystemsCheck extends React.Component {
 
-	// date = React.createRef();
-	// vessel = React.createRef();
-	// hours = React.createRef();
-	// jobTitle = React.createRef();
-	// description = React.createRef();
-	// notes = React.createRef();
-
-	// saveLogData = event => {
-	// 	event.preventDefault();
-	// 	// console.log('i hit the button');
-	// 	const logEntryObj = {
-	// 	date: this.date.current.value,
-	// 	job: {
-	// 		jobVessel: this.vessel.current.value,
-	// 		jobHours: this.hours.current.value,
-	// 		jobTitle: this.jobTitle.current.value,
-	// 		jobDescriptionArray: [
-	// 			this.description.current.value
-	// 		],
-	// 		notes: this.notes.current.value
-	// 		}
-	// 	};
-		
-	// 	this.props.addLogEntry(logEntryObj);
-
-	// }
-
 	render() {
 
 		const url = this.props.match + '/createSystemsCheck';

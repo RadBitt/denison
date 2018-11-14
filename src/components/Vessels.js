@@ -5,16 +5,18 @@ import VesselList from './child-components/VesselList';
 
 class Vessels extends React.Component {
 	render() {
+
+		const childUrl = this.props.match + "/manageVessel";
+
 		return(
 			<div>
 				<h1>Vessels</h1>
 				<ul>
-					<li><Link to="/systemsCheck/createSystemsCheck">New Vessel</Link></li>
+					<li><Link to={childUrl}>New Vessel</Link></li>
 				</ul>
 				<Switch>
-					<Route path={this.props.match + "/manageVessel" }
-					render={
-						() => <ManageVessel />
+					<Route path={childUrl}
+					render={props => <ManageVessel {...props} addVessel={this.props.addVessel}/>
 					} />
 					<Route path={this.props.match}
 					render={
