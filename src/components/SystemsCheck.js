@@ -12,10 +12,14 @@ class SytemsCheck extends React.Component {
 					<li><Link to="/systemsCheck/createSystemsCheck">New Systems-Check Form</Link></li>
 				</ul>
 				<Switch>
-					<Route path={this.props.match + "/createSystemsCheck" }
-					render={
-						() => <CreateSystemsCheck match={this.props.match} />
-					} />
+					<Route path={this.props.match + "/createSystemsCheck" } render={
+						() => <CreateSystemsCheck 
+						match={this.props.match}
+						systemsCheckKey={this.props.systemsCheckKey}
+						createSystemsCheck={this.props.createSystemsCheck}
+						getSysCheckObj={this.props.getSysCheckObj}
+						updateSystemsCheck={this.props.updateSystemsCheck}
+					/>} />
 					<Route path={this.props.match}
 					render={
 						() => <VesselList />

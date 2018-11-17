@@ -59,7 +59,7 @@ Run Engine
 Electrical System
 	Shore Power Chord
 	Shore Power Recepitcle
-	Polarity
+	Reverse Polarity
 	Charging System
 	Inverter System
 	Battery Banks
@@ -67,9 +67,9 @@ Electrical System
 	Battery Cables Secure
 	Battery Cables
 	Battery Switches
-	DC Electrical Panel
-	AC Electrical Panel
-	Gauges
+	DC Panel
+	AC Panel
+	All Gauges
 
 	Notes
 

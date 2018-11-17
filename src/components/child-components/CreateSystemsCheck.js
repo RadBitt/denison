@@ -14,6 +14,8 @@ import ScAcAppliances from './SystemsCheckChildrenForms/ScAcAppliances';
 
 class CreateSystemsCheck extends React.Component {
 
+// Makes loops of this mess
+
 	render() {
 
 		const url = this.props.match + '/createSystemsCheck';
@@ -39,8 +41,12 @@ class CreateSystemsCheck extends React.Component {
 				<Switch>
 					<Route path={url + "/scDetails" }
 						render={
-							() => <ScDetails />
-					} />
+							() => <ScDetails 
+							systemsCheckKey={this.props.systemsCheckKey}
+							createSystemsCheck={this.props.createSystemsCheck}
+							getSysCheckObj={this.props.getSysCheckObj}
+							updateSystemsCheck={this.props.updateSystemsCheck}
+					/>} />
 					<Route path={url + "/scHullCondition" }
 						render={
 							() => <ScHullCondition />
@@ -51,12 +57,14 @@ class CreateSystemsCheck extends React.Component {
 					} />
 					<Route path={url + "/scEngineCompartment" }
 						render={
-							() => <ScEngineCompartment />
-					} />
+							() => <ScEngineCompartment
+							updateSystemsCheck={this.updateSystemsCheck}
+					/>} />
 					<Route path={url + "/scElectricalSystem" }
 						render={
-							() => <ScElectricalSystem />
-					} />
+							() => <ScElectricalSystem
+							updateSystemsCheck={this.updateSystemsCheck}
+					/>} />
 					<Route path={url + "/scGenerator" }
 						render={
 							() => <ScGenerator />

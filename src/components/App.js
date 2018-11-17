@@ -12,7 +12,8 @@ class App extends React.Component {
 	state = {
 		logEntries: {},
 		vessels: {},
-		tempSysCheckForm: {}
+		systemsChecks: {},
+		editSysCheckKey: ''
 	};
 
 	componentDidMount() {
@@ -23,7 +24,6 @@ class App extends React.Component {
 	};
 
 	addVessel = vessel => {
-		console.log(vessel);
 		const vessels = {...this.state.vessels};
 		vessels[`vessel-${Date.now()}`] = vessel;
 		this.setState({
@@ -39,10 +39,31 @@ class App extends React.Component {
 		});
 	};
 
-	updateSystemsCheckField = field => {
-		const tempSysCheckForm = {...this.state.tempSysCheckForm};
+	createSystemsCheck = (object, key) => {
+		// const systemsChecks = {...this.state.systemsChecks};
+		// if(key == undefined) 
+		// 	key = `syscheck-${Date.now()}`;
+		// systemsChecks[key].object = {...object};  
+		// this.setState({
+		// 	systemsChecks[key]: systemsChecks[key].object
+		// });
 	};
 
+	getSysCheckObj = (key) => {
+		console.log(key);
+	};
+
+	updateSysChkKey = key => {
+		let editSysCheckKey = this.state.editSysCheckKey;
+		editSysCheckKey = key;
+		this.setState({
+			editSysCheckKey
+		});
+	};
+
+	updateSystemsCheck = (key, object) => {
+		console.log(key);
+	}
 
 	render() {
 		return(
@@ -67,8 +88,13 @@ class App extends React.Component {
 								() => <ReimbursmentReport />
 							} />
 							<Route path="/systemsCheck" render={
-								() => <SystemsCheck match="/systemsCheck"/>
-							} />
+								() => <SystemsCheck
+									match="/systemsCheck"
+									systemsCheckKey={this.state.editSysCheckKey}
+									createSystemsCheck={this.createSystemsCheck}
+									getSysCheckObj={this.getSysCheckObj}
+									updateSystemsCheck={this.updateSystemsCheck}
+								/>} />
 							<Route path="/vessels" render={
 								() => <Vessels addVessel={this.addVessel} match="/vessels"/>
 							} />

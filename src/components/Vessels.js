@@ -15,9 +15,10 @@ class Vessels extends React.Component {
 					<li><Link to={childUrl}>New Vessel</Link></li>
 				</ul>
 				<Switch>
-					<Route path={childUrl}
-					render={props => <ManageVessel {...props} addVessel={this.props.addVessel}/>
-					} />
+					<Route path={childUrl} 
+						render={props => 
+							<ManageVessel {...props} addVessel={this.props.addVessel}/>} 
+					/>
 					<Route path={this.props.match}
 					render={
 						() => <VesselList />
