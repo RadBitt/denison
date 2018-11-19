@@ -21,7 +21,7 @@ class App extends React.Component {
 			context: this,
 			state: 'vessels',
 		});
-	};
+	};	
 
 	addVessel = vessel => {
 		const vessels = {...this.state.vessels};
@@ -88,16 +88,20 @@ class App extends React.Component {
 								() => <ReimbursmentReport />
 							} />
 							<Route path="/systemsCheck" render={
-								() => <SystemsCheck
-									match="/systemsCheck"
+								props => <SystemsCheck
+									defUrl={'/systemsCheck'}
 									systemsCheckKey={this.state.editSysCheckKey}
 									createSystemsCheck={this.createSystemsCheck}
 									getSysCheckObj={this.getSysCheckObj}
 									updateSystemsCheck={this.updateSystemsCheck}
+									vessels={this.state.vessels}
 								/>} />
 							<Route path="/vessels" render={
-								() => <Vessels addVessel={this.addVessel} match="/vessels"/>
-							} />
+								() => <Vessels 
+									match="/vessels"
+									addVessel={this.addVessel} 
+									vessels={this.state.vessels}
+								/>} />
 						</Switch>
 					</div>
 				</BrowserRouter>

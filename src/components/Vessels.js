@@ -21,7 +21,7 @@ class Vessels extends React.Component {
 					/>
 					<Route path={this.props.match}
 					render={
-						() => <VesselList />
+						() => <VesselList vessels={this.props.vessels}/>
 					} />
 				</Switch>
 			</div>
