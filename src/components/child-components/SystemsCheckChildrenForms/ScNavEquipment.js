@@ -1,48 +1,40 @@
 import React from 'react';
+import RadioToggle from './RadioToggle';
 
 class ScNavEquipment extends React.Component {
+
+	navigationEquipmentLabels = {
+		vhf: 'VHF',
+		mfds: 'Multi-Function Displays',
+		compasses: 'Compasses',
+		navLights: 'Navigation Lights',
+		wind: 'Wind',
+		depth: 'Depth',
+		gps: 'GPS',
+		ais: 'AIS',
+		autopilot: 'Auto-pilot'
+	}
+
+	divHtmlClass = 'form-check form-check-inline';
+	inputHtmlClass = 'form-check-input position-static';
+	labelHtmlClass = 'form-check-label';
+
 	render() {
 		return(
-		<form onSubmit={console.log("1")}>
-			<h2> Navigation Equipment </h2>
-			<div className="form-group">
-				<label htmlFor="vhf">VHF</label>
-				<input ref={this.vhf} type="text" className="form-control" id="vhf" placeholder="OK" />
+			<div>
+				<h2>Navigation Equipment</h2>
+				{Object.keys(this.navigationEquipmentLabels).map(key => (
+		         <RadioToggle
+		         	key={key}
+		         	id={key}
+		            label={this.navigationEquipmentLabels[key]}
+					idName={key}
+					divHtmlClass={this.divHtmlClass}
+					inputHtmlClass={this.inputHtmlClass}
+					labelHtmlClass={this.labelHtmlClass}
+		         />
+		        ))}
 			</div>
-			<div className="form-group">
-				<label htmlFor="mfds">MFDs</label>
-				<input ref={this.mfds} type="text" className="form-control" id="mfds" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="compasses">Compasses</label>
-				<input ref={this.compasses} type="text" className="form-control" id="compasses" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="navLights">Nav Lights</label>
-				<input ref={this.navLights} type="text" className="form-control" id="navLights" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="wind">Wind</label>
-				<input ref={this.wind} type="text" className="form-control" id="wind" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="depth">Depth</label>
-				<input ref={this.depth} type="text" className="form-control" id="depth" placeholder="OK" />
-			</div>   
-			<div className="form-group">
-				<label htmlFor="gps">GPS</label>
-				<input ref={this.gps} type="text" className="form-control" id="gps" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="ais">AIS</label>
-				<input ref={this.ais} type="text" className="form-control" id="ais" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="autopilot">Autopilot</label>
-				<input ref={this.autopilot} type="text" className="form-control" id="autopilot" placeholder="OK" />
-			</div>
-		<button type="submit">Submit</button>
-		</form>
 		);
 	}
 }

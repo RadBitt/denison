@@ -13,7 +13,6 @@ class App extends React.Component {
 		logEntries: {},
 		vessels: {},
 		systemsChecks: {},
-		editSysCheckKey: ''
 	};
 
 	componentDidMount() {
@@ -21,7 +20,12 @@ class App extends React.Component {
 			context: this,
 			state: 'vessels',
 		});
-	};	
+		console.log('app mounted');
+	};
+
+	componentWillUnMount() {
+		console.log('app un-mounted');
+	}
 
 	addVessel = vessel => {
 		const vessels = {...this.state.vessels};
@@ -31,6 +35,11 @@ class App extends React.Component {
 		});
 	};
 
+	getVessel = vessel => {
+		const obj = this.state.vessels[vessel];
+		return obj;
+	};
+
 	addLogEntry = log => {
 		const logEntries = {...this.state.logEntries};
 		logEntries[`log${Date.now()}`] = log;
@@ -38,32 +47,6 @@ class App extends React.Component {
 			logEntries
 		});
 	};
-
-	createSystemsCheck = (object, key) => {
-		// const systemsChecks = {...this.state.systemsChecks};
-		// if(key == undefined) 
-		// 	key = `syscheck-${Date.now()}`;
-		// systemsChecks[key].object = {...object};  
-		// this.setState({
-		// 	systemsChecks[key]: systemsChecks[key].object
-		// });
-	};
-
-	getSysCheckObj = (key) => {
-		console.log(key);
-	};
-
-	updateSysChkKey = key => {
-		let editSysCheckKey = this.state.editSysCheckKey;
-		editSysCheckKey = key;
-		this.setState({
-			editSysCheckKey
-		});
-	};
-
-	updateSystemsCheck = (key, object) => {
-		console.log(key);
-	}
 
 	render() {
 		return(
@@ -88,11 +71,13 @@ class App extends React.Component {
 								() => <ReimbursmentReport />
 							} />
 							<Route path="/systemsCheck" render={
-								props => <SystemsCheck
-									defUrl={'/systemsCheck'}
-									systemsCheckKey={this.state.editSysCheckKey}
+								(props) => <SystemsCheck
 									createSystemsCheck={this.createSystemsCheck}
+									defUrl={'/systemsCheck'}
+									getVessel={this.getVessel}
 									getSysCheckObj={this.getSysCheckObj}
+									location={props.location}
+									systemsCheckKey={this.state.editSysCheckKey}
 									updateSystemsCheck={this.updateSystemsCheck}
 									vessels={this.state.vessels}
 								/>} />

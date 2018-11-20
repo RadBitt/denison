@@ -1,32 +1,37 @@
 import React from 'react';
+import RadioToggle from './RadioToggle';
 
 class ScAutoPilot extends React.Component {
+
+	steeringSystemLabels = {
+		steering: 'Steering',
+		chain: 'Chain',
+		hyrdraulic: 'Hyrdraulic',
+		shaft: 'Shaft', 
+		autopilot: 'Autopilot'
+	}
+
+	divHtmlClass = 'form-check form-check-inline';
+	inputHtmlClass = 'form-check-input position-static';
+	labelHtmlClass = 'form-check-label';
+
 	render() {
 		return(
-		<form onSubmit={console.log("1")}>
-			<h2> Autopilot </h2>
-			<div className="form-group">
-				<label htmlFor="steering">Steering</label>
-				<input ref={this.steering} type="text" className="form-control" id="steering" placeholder="OK" />
+			<div>
+			<h2>Steering System</h2>
+			{Object.keys(this.steeringSystemLabels).map(key => (
+	         <RadioToggle
+	         	key={key}
+	         	id={key}
+	            label={this.steeringSystemLabels[key]}
+				idName={key}
+				divHtmlClass={this.divHtmlClass}
+				inputHtmlClass={this.inputHtmlClass}
+				labelHtmlClass={this.labelHtmlClass}
+	         />
+	        ))}
 			</div>
-			<div className="form-group">
-				<label htmlFor="chain">Chain</label>
-				<input ref={this.chain} type="text" className="form-control" id="chain" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="hyrdraulic">Hyrdraulic</label>
-				<input ref={this.hyrdraulic} type="text" className="form-control" id="hyrdraulic" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="shaft">Shaft</label>
-				<input ref={this.shaft} type="text" className="form-control" id="shaft" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="autopilot">Autopilot</label>
-				<input ref={this.autopilot} type="text" className="form-control" id="autopilot" placeholder="OK" />
-			</div>
-		<button type="submit">Submit</button>
-		</form>
+
 		);
 	}
 }

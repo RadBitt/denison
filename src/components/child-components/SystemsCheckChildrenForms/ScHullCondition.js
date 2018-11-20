@@ -1,25 +1,34 @@
 import React from 'react';
+import RadioToggle from './RadioToggle';
 
 class ScHullCondition extends React.Component {
+
+	hullConditionLabels = {
+		waterlineCondition: 'Waterline Condition',
+		hullDamage: 'Hull Damage',
+		deckHardware: 'Deck Hardware'
+	}
+
+	divHtmlClass = 'form-check form-check-inline';
+	inputHtmlClass = 'form-check-input position-static';
+	labelHtmlClass = 'form-check-label';
+
 	render() {
 		return(
-		
-		<form onSubmit={console.log("1")}>
+		<div>
 			<h2> Hull Condition </h2>
-			<div className="form-group">	
-				<label htmlFor="waterlineCondition">Waterline condition</label>
-				<input ref={this.waterlineCondition} type="text" className="form-control" id="waterlineCondition" placeholder="OK"/>
-			</div>
-			<div className="form-group">
-				<label htmlFor="hullDamage">Hull damage</label>
-				<input ref={this.hullDamage} type="text" className="form-control" id="hullDamage" placeholder="OK"/>
-			</div>
-			<div className="form-group">
-				<label htmlFor="deckHardware">Deck hardware</label>
-				<input ref={this.deckHardware} type="text" className="form-control" id="deckHardware" placeholder="OK"/>
-			</div>
-		<button type="submit">Submit</button>
-		</form>
+			{Object.keys(this.hullConditionLabels).map(key => (
+	         <RadioToggle
+	         	key={key}
+	         	id={key}
+	            label={this.hullConditionLabels[key]}
+				idName={key}
+				divHtmlClass={this.divHtmlClass}
+				inputHtmlClass={this.inputHtmlClass}
+				labelHtmlClass={this.labelHtmlClass}
+	         />
+	        ))}
+		</div>
 		);
 	}
 }

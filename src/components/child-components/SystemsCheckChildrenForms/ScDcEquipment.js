@@ -1,40 +1,38 @@
 import React from 'react';
+import RadioToggle from './RadioToggle';
 
 class ScDcEquipment extends React.Component {
+
+	dCEquipmentLabels = {
+		waterPressure: 'Water Pressure',
+		bilgePumps: 'Bilge Pumps',
+		dcRefrigerator: 'DC Refrigerator',
+		tv: 'TV',
+		dvd: 'DVD',
+		stove: 'Stove',
+		propane: 'Propane'
+	}
+
+	divHtmlClass = 'form-check form-check-inline';
+	inputHtmlClass = 'form-check-input position-static';
+	labelHtmlClass = 'form-check-label';
+
 	render() {
 		return(
-		<form onSubmit={console.log("1")}>
-			<h2> DC Equipment </h2>
-			<div className="form-group">
-				<label htmlFor="waterPressure">Water Pressure</label>
-				<input ref={this.waterPressure} type="text" className="form-control" id="waterPressure" placeholder="OK" />
+			<div>
+			<h2>DC Equipment</h2>
+			{Object.keys(this.dCEquipmentLabels).map(key => (
+	         <RadioToggle
+	         	key={key}
+	         	id={key}
+	            label={this.dCEquipmentLabels[key]}
+				idName={key}
+				divHtmlClass={this.divHtmlClass}
+				inputHtmlClass={this.inputHtmlClass}
+				labelHtmlClass={this.labelHtmlClass}
+	         />
+	        ))}
 			</div>
-			<div className="form-group">
-				<label htmlFor="bilgePumps">Bilge Pumps</label>
-				<input ref={this.bilgePumps} type="text" className="form-control" id="bilgePumps" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="dcRefrigerator">DC Refrigerator</label>
-				<input ref={this.dcRefrigerator} type="text" className="form-control" id="dcRefrigerator" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="tv">TVs</label>
-				<input ref={this.tv} type="text" className="form-control" id="tv" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="dvd">DVD</label>
-				<input ref={this.dvd} type="text" className="form-control" id="dvd" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="stove">Stove</label>
-				<input ref={this.stove} type="text" className="form-control" id="stove" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="propane">Propane</label>
-				<input ref={this.propane} type="text" className="form-control" id="propane" placeholder="OK" />
-			</div>
-		<button type="submit">Submit</button>
-		</form>
 		);
 	}
 }

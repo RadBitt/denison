@@ -11,7 +11,9 @@ class VesselList extends React.Component {
 			         <li key={key}><VesselEntry
 			            index={key}
 			            details={this.props.vessels[key]}
+			            getVessel={this.props.getVessel}
 			            location={this.props.location}
+			            updateVesselKey={this.props.updateVesselKey}
 			          /></li>
 					))}
 				</ul>	

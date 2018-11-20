@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
+import VesselSelect from './VesselSelect';
+import object from '../../bin/sysCheckJson/sysCheckFormObjTemp';
 import ScDetails from './SystemsCheckChildrenForms/ScDetails';
 import ScHullCondition from './SystemsCheckChildrenForms/ScHullCondition';
 import ScRiggingCondition from './SystemsCheckChildrenForms/ScRiggingCondition';
@@ -14,7 +16,22 @@ import ScAcAppliances from './SystemsCheckChildrenForms/ScAcAppliances';
 
 class CreateSystemsCheck extends React.Component {
 
-// Makes loops of this mess
+	state = {
+		selectable: true,
+		systemCheckForm: object,
+		vesselKey: ''
+	};
+
+	updateVessel = key => {
+		this.setState({
+			vesselKey: key,
+			selectable: false
+		});
+	};
+
+	updateSystemsCheck = key => {
+
+	}
 
 	render() {
 
@@ -23,9 +40,15 @@ class CreateSystemsCheck extends React.Component {
 		return(
 			<div>
 				<h2>New Systems Check</h2>
+				<VesselSelect
+					selectable={this.state.selectable}
+					updateVessel={this.updateVessel}
+					vessels={this.props.vessels}
+					vesselKey={this.state.vesselKey}
+				/>
 				<nav>
 					<ul className="pagination pagination-sm justify-content-center">
-					<li className="page-item"><Link className="page-link" to={url + "/scDetails"}>Vessel Details</Link></li> 
+					<li className="page-item"><Link disabled className="page-link" to={url + "/scDetails"}>Vessel Details</Link></li> 
 					<li className="page-item"><Link className="page-link" to={url + "/scHullCondition"}>Hull Condition</Link></li> 
 					<li className="page-item"><Link className="page-link" to={url + "/scRiggingCondition"}>Rigging Condition</Link></li> 
 					<li className="page-item"><Link className="page-link" to={url + "/scEngineCompartment"}>Engine Compartment</Link></li> 

@@ -3,7 +3,7 @@ import RadioToggle from './RadioToggle';
 
 class ScElectricalSystem extends React.Component {
 
-	electricalSystem = {
+	electricalSystemLabels = {
 		shorePowerChord:  'Shore Power Chord',
 		shorePowerRecepitcle: 'Shore Power Recepitcle',
 		polarity: 'Reverse Polarity',
@@ -19,6 +19,10 @@ class ScElectricalSystem extends React.Component {
 		gauges: 'All Gauges'
 	}
 
+	allLightsLabels = {
+		lights: 'All Lights'
+	}
+
 	divHtmlClass = 'form-check form-check-inline';
 	inputHtmlClass = 'form-check-input position-static';
 	labelHtmlClass = 'form-check-label';
@@ -27,11 +31,11 @@ class ScElectricalSystem extends React.Component {
 		return(
 		<div>
 			<h2> Electrical System </h2>
-			{Object.keys(this.electricalSystem).map(key => (
+			{Object.keys(this.electricalSystemLabels).map(key => (
 	         <RadioToggle
 	         	key={key}
 	         	id={key}
-	            label={this.electricalSystem[key]}
+	            label={this.electricalSystemLabels[key]}
 				idName={key}
 				divHtmlClass={this.divHtmlClass}
 				inputHtmlClass={this.inputHtmlClass}
@@ -39,6 +43,17 @@ class ScElectricalSystem extends React.Component {
 	         />
 	        ))}
 			<h2> Lights </h2>
+			{Object.keys(this.allLightsLabels).map(key => (
+	         <RadioToggle
+	         	key={key}
+	         	id={key}
+	            label={this.allLightsLabels[key]}
+				idName={key}
+				divHtmlClass={this.divHtmlClass}
+				inputHtmlClass={this.inputHtmlClass}
+				labelHtmlClass={this.labelHtmlClass}
+	         />
+	        ))}
 		</div>
 		);
 	}

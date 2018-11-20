@@ -1,38 +1,67 @@
 import React from 'react';
+import RadioToggle from './RadioToggle';
 
 class ScAcAppliances extends React.Component {
+
+	aCAppliancesLabels = {
+		acRefrigerator: 'AC Refrigerator',
+		microwave: 'Microwave'
+	}
+
+	waterHeaterLabels = {
+		testElectrical: 'Test Electrical',
+		testConvection: 'Test Convection'
+	}
+
+	airConditioningLabels = {
+		testHeat: 'Test Heat',
+		testCold: 'Test Cold'
+	}
+
+	divHtmlClass = 'form-check form-check-inline';
+	inputHtmlClass = 'form-check-input position-static';
+	labelHtmlClass = 'form-check-label';
+
 	render() {
 		return(
-		<form onSubmit={console.log("1")}>
-			<h2> AC Appliances </h2>
-			<div className="form-group">
-				<label htmlFor="acRefrigerator">AC Refrigerator</label>
-				<input ref={this.acRefrigerator} type="text" className="form-control" id="acRefrigerator" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="microwave">Microwave</label>
-				<input ref={this.microwave} type="text" className="form-control" id="microwave" placeholder="OK" />
-			</div>
-			<h2> Water Heater </h2>
-			<div className="form-group">
-				<label htmlFor="testElectrical">Test Electrical</label>
-				<input ref={this.testElectrical} type="text" className="form-control" id="testElectrical" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="testConvection">Test Convection</label>
-				<input ref={this.testConvection} type="text" className="form-control" id="testConvection" placeholder="OK" />
-			</div>
-			<h2> Air Conditioner </h2>
-			<div className="form-group">
-				<label htmlFor="testHeat">Test Heat</label>
-				<input ref={this.testHeat} type="text" className="form-control" id="testHeat" placeholder="OK" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="testCold">Test Cold</label>
-				<input ref={this.testCold} type="text" className="form-control" id="testCold" placeholder="OK" />
-			</div>
-		<button type="submit">Submit</button>
-		</form>
+		<div>
+			<h2>AC Appliances</h2>
+			{Object.keys(this.aCAppliancesLabels).map(key => (
+	         <RadioToggle
+	         	key={key}
+	         	id={key}
+	            label={this.aCAppliancesLabels[key]}
+				idName={key}
+				divHtmlClass={this.divHtmlClass}
+				inputHtmlClass={this.inputHtmlClass}
+				labelHtmlClass={this.labelHtmlClass}
+	         />
+	        ))}
+			<h2>Water Heater</h2>
+			{Object.keys(this.waterHeaterLabels).map(key => (
+	         <RadioToggle
+	         	key={key}
+	         	id={key}
+	            label={this.waterHeaterLabels[key]}
+				idName={key}
+				divHtmlClass={this.divHtmlClass}
+				inputHtmlClass={this.inputHtmlClass}
+				labelHtmlClass={this.labelHtmlClass}
+	         />
+	        ))}
+			<h2>Air Conditioner</h2>
+			{Object.keys(this.airConditioningLabels).map(key => (
+	         <RadioToggle
+	         	key={key}
+	         	id={key}
+	            label={this.airConditioningLabels[key]}
+				idName={key}
+				divHtmlClass={this.divHtmlClass}
+				inputHtmlClass={this.inputHtmlClass}
+				labelHtmlClass={this.labelHtmlClass}
+	         />
+	        ))}
+		</div>
 		);
 	}
 }

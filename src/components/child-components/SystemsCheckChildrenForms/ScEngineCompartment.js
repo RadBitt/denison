@@ -3,8 +3,8 @@ import RadioToggle from './RadioToggle';
 
 class ScEngineCompartment extends React.Component {
 
-	engineCompartment = {
-		thruhulls: 'Thru-hulls',
+	engineCompartmentLabels = {
+		thruHulls: 'Thru-hulls',
 		seaStrainer: 'Sea Strainer',
 		starterBatteryCables: 'Starter Battery',
 		alternatorBatteryCables: 'Alternator Battery',
@@ -13,14 +13,14 @@ class ScEngineCompartment extends React.Component {
 		auxWiring: 'Aux Wiring',
 		bilge: 'Bilge',
 		shaft: 'Shaft',
-		oillevel: 'Oil Level',
-		transoillevel: 'Transmission Oil level',
-		coolantlevel: 'Coolant level',
-		expansiontanklevel: 'Expansion Tank Level',
+		oilLevel: 'Oil Level',
+		transoilLevel: 'Transmission Oil level',
+		coolantLevel: 'Coolant level',
+		expansionTanklevel: 'Expansion Tank Level',
 		belts: 'Engine Belts',
-		oilcooler: 'Oil Cooler',
-		watercooler: 'Water Cooler',
-		rawwaterpump: 'Raw Water Pump',
+		oilCooler: 'Oil Cooler',
+		waterCooler: 'Water Cooler',
+		rawWaterPump: 'Raw Water Pump',
 		exhaustSystem: 'Exhaust System',
 	}
 
@@ -32,11 +32,11 @@ class ScEngineCompartment extends React.Component {
 		return(
 		<div>
 			<h2> Engine Compartment </h2>
-			{Object.keys(this.engineCompartment).map(key => (
+			{Object.keys(this.engineCompartmentLabels).map(key => (
 	         <RadioToggle
 	         	key={key}
 	         	id={key}
-	            label={this.engineCompartment[key]}
+	            label={this.engineCompartmentLabels[key]}
 				idName={key}
 				divHtmlClass={this.divHtmlClass}
 				inputHtmlClass={this.inputHtmlClass}

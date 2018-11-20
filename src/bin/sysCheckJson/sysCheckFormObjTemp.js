@@ -1,13 +1,14 @@
 
 let object = {
-technician: 'Leo',
-dateOfReport: '11-16-2018'
+technician: 'Tech Name',
+dateOfReport: 'Date',
+vesselKey: '',
 vesselInformation: {
-	owner: 'Bill Keating',
-	vesselModel: null,
-	hullNumber: null,
-	engineSerial: null,
-	engineHours: null
+	owner: 'null',
+	vesselModel: 'null',
+	hullNumber: 'null',
+	engineSerial: 'null',
+	engineHours: 'null'
 },
 hullCondition: {
 	waterlineCondition: true,
@@ -32,14 +33,14 @@ engineCompartment: {
 	auxWiring: true,
 	bilge: true,
 	shaft: true,
-	oillevel: true,
-	transoillevel: true,
-	coolantlevel: true,
-	expansiontanklevel: true,
+	oilLevel: true,
+	transoilLevel: true,
+	coolantLevel: true,
+	expansionTanklevel: true,
 	belts: true,
-	oilcooler: true,
-	watercooler: true,
-	rawwaterpump: true,
+	oilCooler: true,
+	waterCooler: true,
+	rawWaterPump: true,
 	exhaustSystem: true
 },
 runEngine: {
@@ -62,7 +63,7 @@ electricalSystem: {
 	batterySwitches: true,
 	dCElectricalPanel: true,
 	aCElectricalPanel: true,
-	gauges:
+	gauges: true
 },
 allLights: {
 	lights: true
@@ -73,7 +74,7 @@ audioSystem: {
 },
 mainGenerator: {
  	genThruHulls: true,
-	genSeaStrainer:
+	genSeaStrainer: true,
 	genStarterBatteryCables: true, 
 	generatorCables: true,
 	genGroundingCables: true,
