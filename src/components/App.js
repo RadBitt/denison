@@ -5,7 +5,7 @@ import HoursLog from './HoursLog';
 import ReimbursmentReport from './ReimbursmentReport';
 import SystemsCheck from './SystemsCheck';
 import Vessels from './Vessels';
-import { base, firebaseApp } from '../base';
+import { base } from '../base';
 
 class App extends React.Component {
 
@@ -25,6 +25,25 @@ class App extends React.Component {
 
 	componentWillUnMount() {
 		console.log('app un-mounted');
+	};
+
+	addSystemCheckForm = formObject => {
+		const sysChecks = this.state.systemsChecks;
+		const key = `syscheck-${Date.now()}`;
+		sysChecks[key] = formObject;
+		this.setState({
+			systemsChecks: sysChecks
+		});
+		return key;
+	};
+
+	updateSystemCheckForm = (key, formObject) => {
+		const sysChecks = this.state.systemsChecks;
+		sysChecks[key] = formObject;
+		console.log(sysChecks[key]);
+		// this.setState({
+		// 	systemsChecks: sysChecks
+		// });
 	}
 
 	addVessel = vessel => {
@@ -72,13 +91,11 @@ class App extends React.Component {
 							} />
 							<Route path="/systemsCheck" render={
 								(props) => <SystemsCheck
-									createSystemsCheck={this.createSystemsCheck}
+									addSystemCheckForm={this.addSystemCheckForm}
 									defUrl={'/systemsCheck'}
 									getVessel={this.getVessel}
-									getSysCheckObj={this.getSysCheckObj}
 									location={props.location}
-									systemsCheckKey={this.state.editSysCheckKey}
-									updateSystemsCheck={this.updateSystemsCheck}
+									updateSystemCheckForm={this.updateSystemCheckForm}
 									vessels={this.state.vessels}
 								/>} />
 							<Route path="/vessels" render={

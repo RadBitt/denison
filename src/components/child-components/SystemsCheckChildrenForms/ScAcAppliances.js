@@ -3,6 +3,10 @@ import RadioToggle from './RadioToggle';
 
 class ScAcAppliances extends React.Component {
 
+	parentId1 = 'aCAppliances';
+	parentId2 = 'waterHeater';
+	parentId3 = 'airConditioning';
+
 	aCAppliancesLabels = {
 		acRefrigerator: 'AC Refrigerator',
 		microwave: 'Microwave'
@@ -23,42 +27,49 @@ class ScAcAppliances extends React.Component {
 	labelHtmlClass = 'form-check-label';
 
 	render() {
+		const props = this.props;
 		return(
 		<div>
 			<h2>AC Appliances</h2>
 			{Object.keys(this.aCAppliancesLabels).map(key => (
 	         <RadioToggle
+	         	{...props}
 	         	key={key}
 	         	id={key}
+	         	parentId={this.parentId1}
 	            label={this.aCAppliancesLabels[key]}
-				idName={key}
 				divHtmlClass={this.divHtmlClass}
 				inputHtmlClass={this.inputHtmlClass}
 				labelHtmlClass={this.labelHtmlClass}
+				updateSystemsCheck={this.props.updateSystemsCheck}
 	         />
 	        ))}
 			<h2>Water Heater</h2>
 			{Object.keys(this.waterHeaterLabels).map(key => (
 	         <RadioToggle
+	         	{...props}
 	         	key={key}
 	         	id={key}
+	         	parentId={this.parentId2}
 	            label={this.waterHeaterLabels[key]}
-				idName={key}
 				divHtmlClass={this.divHtmlClass}
 				inputHtmlClass={this.inputHtmlClass}
 				labelHtmlClass={this.labelHtmlClass}
+				updateSystemsCheck={this.props.updateSystemsCheck}
 	         />
 	        ))}
 			<h2>Air Conditioner</h2>
 			{Object.keys(this.airConditioningLabels).map(key => (
 	         <RadioToggle
+	         	{...props}
 	         	key={key}
 	         	id={key}
+	         	parentId={this.parentId3}
 	            label={this.airConditioningLabels[key]}
-				idName={key}
 				divHtmlClass={this.divHtmlClass}
 				inputHtmlClass={this.inputHtmlClass}
 				labelHtmlClass={this.labelHtmlClass}
+				updateSystemsCheck={this.props.updateSystemsCheck}
 	         />
 	        ))}
 		</div>

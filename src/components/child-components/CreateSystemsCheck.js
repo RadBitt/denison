@@ -13,27 +13,53 @@ import ScWaterSystems from './SystemsCheckChildrenForms/ScWaterSystems';
 import ScAutoPilot from './SystemsCheckChildrenForms/ScAutoPilot';
 import ScDcEquipment from './SystemsCheckChildrenForms/ScDcEquipment';
 import ScAcAppliances from './SystemsCheckChildrenForms/ScAcAppliances';
+import { dSniff } from '../../bin/hFuncs';
 
 class CreateSystemsCheck extends React.Component {
 
 	state = {
 		selectable: true,
 		systemCheckForm: object,
+		systemCheckKey: '0',
 		vesselKey: ''
 	};
 
-	updateVessel = key => {
+	componentDidUpdate(prevProps, prevState) {
+		if (this.state.systemCheckForm !== prevState.systemCheckForm) {
+    		this.props.updateSystemCheckForm(this.state.systemCheckKey, this.state.systemCheckForm);
+  		}
+	};
+
+	initializeForm = key => {
+		let sysCheckKey;
+		const tempObj = this.state.systemCheckForm;
+		tempObj['vesselKey'] = key;
 		this.setState({
-			vesselKey: key,
-			selectable: false
+			systemCheckForm: tempObj,
+			selectable: false,
+			vesselKey: key
+		});
+		sysCheckKey = this.props.addSystemCheckForm(this.state.systemCheckForm);
+		this.setState({
+			systemCheckKey: sysCheckKey,
 		});
 	};
 
-	updateSystemsCheck = key => {
-
-	}
+	updateSystemsCheck = (pkey, ckey, value) => {
+		let tempObj = this.state.systemCheckForm;
+		tempObj = dSniff(tempObj, pkey, ckey, value);
+		console.log(tempObj)
+		this.setState({
+			systemCheckForm: tempObj
+		});
+	};
 
 	render() {
+
+		const props = {
+			formObj: this.state.systemCheckForm,
+			updateSystemsCheck: this.updateSystemsCheck
+		}
 
 		const url = this.props.match + '/createSystemsCheck';
 
@@ -41,8 +67,9 @@ class CreateSystemsCheck extends React.Component {
 			<div>
 				<h2>New Systems Check</h2>
 				<VesselSelect
+					history={this.props.history}
 					selectable={this.state.selectable}
-					updateVessel={this.updateVessel}
+					initializeForm={this.initializeForm}
 					vessels={this.props.vessels}
 					vesselKey={this.state.vesselKey}
 				/>
@@ -64,54 +91,59 @@ class CreateSystemsCheck extends React.Component {
 				<Switch>
 					<Route path={url + "/scDetails" }
 						render={
-							() => <ScDetails 
-							systemsCheckKey={this.props.systemsCheckKey}
-							createSystemsCheck={this.props.createSystemsCheck}
-							getSysCheckObj={this.props.getSysCheckObj}
-							updateSystemsCheck={this.props.updateSystemsCheck}
+							() => <ScDetails
+							{...props}
 					/>} />
 					<Route path={url + "/scHullCondition" }
 						render={
-							() => <ScHullCondition />
-					} />
+							() => <ScHullCondition
+							{...props}
+					/>} />
 					<Route path={url + "/scRiggingCondition" }
 						render={
-							() => <ScRiggingCondition />
-					} />
+							() => <ScRiggingCondition
+							{...props}
+					/>} />
 					<Route path={url + "/scEngineCompartment" }
 						render={
 							() => <ScEngineCompartment
-							updateSystemsCheck={this.updateSystemsCheck}
+							{...props}
 					/>} />
 					<Route path={url + "/scElectricalSystem" }
 						render={
 							() => <ScElectricalSystem
-							updateSystemsCheck={this.updateSystemsCheck}
+							{...props}
 					/>} />
 					<Route path={url + "/scGenerator" }
 						render={
-							() => <ScGenerator />
-					} />
+							() => <ScGenerator
+							{...props}
+					/>} />
 					<Route path={url + "/scNavEquipment" }
 						render={
-							() => <ScNavEquipment />
-					} />
+							() => <ScNavEquipment
+							{...props}
+					/>} />
 					<Route path={url + "/scWaterSystems" }
 						render={
-							() => <ScWaterSystems />
-					} />
+							() => <ScWaterSystems
+							{...props}
+					/>} />
 					<Route path={url + "/scAutoPilot" }
 						render={
-							() => <ScAutoPilot />
-					} />
+							() => <ScAutoPilot
+							{...props}
+					/>} />
 					<Route path={url + "/scDcEquipment" }
 						render={
-							() => <ScDcEquipment />
-					} />
+							() => <ScDcEquipment
+							{...props}
+					/>} />
 					<Route path={url + "/scAcAppliances" }
 						render={
-							() => <ScAcAppliances />
-					} />
+							() => <ScAcAppliances
+							{...props}
+					/>} />
 				</Switch>
 			</div>
 		);

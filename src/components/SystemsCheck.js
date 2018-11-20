@@ -29,7 +29,6 @@ class SytemsCheck extends React.Component {
 	componentDidUpdate(prevProps, prevState) {
 		// console.log('syscheck updated');
 		// const singleVesselExp = new RegExp('vessel-[0-9]*');
-		// this.vesselObj = this.state.currentLocation.match(singleVesselExp);
 		if(prevState.vesselKey !== this.state.vesselKey) {
 			this.setState({
 				currentLocation: this.props.location.pathname
@@ -38,9 +37,9 @@ class SytemsCheck extends React.Component {
 	};
 
 	handleClick = event => {
-		if (event.target.id == '1')
+		if (event.target.id === '1')
 			this.setState({newSysChkLink: false})
-		if (event.target.id == '2')
+		if (event.target.id === '2')
 			this.setState({newSysChkLink: true})
 	};
 
@@ -64,12 +63,11 @@ class SytemsCheck extends React.Component {
 				{sysCheckLink}
 				<Switch>
 					<Route path={this.state.defaultLocation + '/createSystemsCheck' } render={
-						() => <CreateSystemsCheck 
+						(props) => <CreateSystemsCheck 
+						{...props}
 						match={this.state.defaultLocation}
-						systemsCheckKey={this.props.systemsCheckKey}
-						createSystemsCheck={this.props.createSystemsCheck}
-						getSysCheckObj={this.props.getSysCheckObj}
-						updateSystemsCheck={this.props.updateSystemsCheck}
+						addSystemCheckForm={this.props.addSystemCheckForm}
+						updateSystemCheckForm={this.props.updateSystemCheckForm}
 						vessels={this.props.vessels}
 					/>} />
 					<Route path={this.state.defaultLocation + '/' + this.state.vesselKey}

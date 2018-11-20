@@ -3,6 +3,8 @@ import RadioToggle from './RadioToggle';
 
 class ScNavEquipment extends React.Component {
 
+	parentId = 'navigationEquipment';
+
 	navigationEquipmentLabels = {
 		vhf: 'VHF',
 		mfds: 'Multi-Function Displays',
@@ -20,15 +22,17 @@ class ScNavEquipment extends React.Component {
 	labelHtmlClass = 'form-check-label';
 
 	render() {
+		const props = this.props;
 		return(
 			<div>
 				<h2>Navigation Equipment</h2>
 				{Object.keys(this.navigationEquipmentLabels).map(key => (
 		         <RadioToggle
+		         	{...props}
 		         	key={key}
 		         	id={key}
+		         	parentId={this.parentId}
 		            label={this.navigationEquipmentLabels[key]}
-					idName={key}
 					divHtmlClass={this.divHtmlClass}
 					inputHtmlClass={this.inputHtmlClass}
 					labelHtmlClass={this.labelHtmlClass}

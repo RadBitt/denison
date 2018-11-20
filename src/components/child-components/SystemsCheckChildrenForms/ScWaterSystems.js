@@ -3,6 +3,8 @@ import RadioToggle from './RadioToggle';
 
 class ScWaterSystems extends React.Component {
 
+	parentId = 'waterSystems';
+
 	waterSystemsLabels = {
 	 	testToilets: 'Test Toilets',
 		maceratorPump: 'Macerator Pump',
@@ -20,15 +22,17 @@ class ScWaterSystems extends React.Component {
 	labelHtmlClass = 'form-check-label';
 
 	render() {
+		const props = this.props;
 		return(
 			<div>
 				<h2>Water Systems</h2>
 				{Object.keys(this.waterSystemsLabels).map(key => (
 		         <RadioToggle
+		         	{...props}
 		         	key={key}
 		         	id={key}
+		         	parentId={this.parentId}
 		            label={this.waterSystemsLabels[key]}
-					idName={key}
 					divHtmlClass={this.divHtmlClass}
 					inputHtmlClass={this.inputHtmlClass}
 					labelHtmlClass={this.labelHtmlClass}

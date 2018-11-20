@@ -3,6 +3,9 @@ import RadioToggle from './RadioToggle';
 
 class ScGenerator extends React.Component {
 
+	parentId1 = 'mainGenerator';
+	parentId2 = 'runGenerator';
+
 	mainGeneratorLabels = {
 	 	genThruHulls: 'Thru Hulls',
 	 	genSeaStrainer: 'Sea Strainer',
@@ -34,15 +37,17 @@ class ScGenerator extends React.Component {
 	labelHtmlClass = 'form-check-label';
 
 	render() {
+		const props = this.props;
 		return(
 		<div>
 		<h2>Generator</h2>
 			{Object.keys(this.mainGeneratorLabels).map(key => (
 				<RadioToggle
+				{...props}
 		     	key={key}
 		     	id={key}
+		     	parentId={this.parentId1}
 		        label={this.mainGeneratorLabels[key]}
-				idName={key}
 				divHtmlClass={this.divHtmlClass}
 				inputHtmlClass={this.inputHtmlClass}
 				labelHtmlClass={this.labelHtmlClass}
@@ -51,10 +56,11 @@ class ScGenerator extends React.Component {
 		<h2>Run Generator</h2>
 			{Object.keys(this.runGeneratorLabels).map(key => (
 				<RadioToggle
+				{...props}
 		     	key={key}
 		     	id={key}
+		     	parentId={this.parentId2}
 		        label={this.runGeneratorLabels[key]}
-				idName={key}
 				divHtmlClass={this.divHtmlClass}
 				inputHtmlClass={this.inputHtmlClass}
 				labelHtmlClass={this.labelHtmlClass}
