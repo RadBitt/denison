@@ -25,14 +25,15 @@ class CreateSystemsCheck extends React.Component {
 	};
 
 	componentDidUpdate(prevProps, prevState) {
+		console.log((this.state.systemCheckForm !== prevState.systemCheckForm));
 		if (this.state.systemCheckForm !== prevState.systemCheckForm) {
-    		this.props.updateSystemCheckForm(this.state.systemCheckKey, this.state.systemCheckForm);
+    		// this.props.updateSystemCheckForm(this.state.systemCheckKey, this.state.systemCheckForm);
   		}
 	};
 
 	initializeForm = key => {
 		let sysCheckKey;
-		const tempObj = this.state.systemCheckForm;
+		const tempObj = {...this.state.systemCheckForm};
 		tempObj['vesselKey'] = key;
 		this.setState({
 			systemCheckForm: tempObj,
@@ -46,9 +47,9 @@ class CreateSystemsCheck extends React.Component {
 	};
 
 	updateSystemsCheck = (pkey, ckey, value) => {
-		let tempObj = this.state.systemCheckForm;
+		let tempObj = {...this.state.systemCheckForm};
 		tempObj = dSniff(tempObj, pkey, ckey, value);
-		console.log(tempObj)
+		console.log(tempObj);
 		this.setState({
 			systemCheckForm: tempObj
 		});

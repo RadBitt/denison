@@ -20,6 +20,10 @@ class App extends React.Component {
 			context: this,
 			state: 'vessels',
 		});
+		// this.ref = base.syncState('systemsChecks', {
+		// 	context: this,
+		// 	state: 'systemsChecks',
+		// });
 		console.log('app mounted');
 	};
 
@@ -28,23 +32,22 @@ class App extends React.Component {
 	};
 
 	addSystemCheckForm = formObject => {
-		const sysChecks = this.state.systemsChecks;
-		const key = `syscheck-${Date.now()}`;
-		sysChecks[key] = formObject;
-		this.setState({
-			systemsChecks: sysChecks
-		});
-		return key;
-	};
-
-	updateSystemCheckForm = (key, formObject) => {
-		const sysChecks = this.state.systemsChecks;
-		sysChecks[key] = formObject;
-		console.log(sysChecks[key]);
+		// const sysChecks = {this.state.systemsChecks};
+		// const key = `syscheck-${Date.now()}`;
+		// sysChecks[key] = formObject;
 		// this.setState({
 		// 	systemsChecks: sysChecks
 		// });
-	}
+		// return key;
+	};
+
+	updateSystemCheckForm = (key, formObject) => {
+		// const sysChecks = {this.state.systemsChecks};
+		// sysChecks[key] = formObject;
+		// this.setState({
+		// 	systemsChecks: sysChecks
+		// });
+	};
 
 	addVessel = vessel => {
 		const vessels = {...this.state.vessels};
