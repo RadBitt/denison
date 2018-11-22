@@ -10,7 +10,9 @@ class VesselSelect extends React.Component {
 	};
 
 	handleSave = event => {
-		
+		const pathName = this.props.history.location.pathname;
+		this.props.completeSystemsCheck(); 
+		this.props.history.push('/systemsCheck');
 	};
 
 	render() {

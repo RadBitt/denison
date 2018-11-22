@@ -27,7 +27,7 @@ class CreateSystemsCheck extends React.Component {
 	componentDidUpdate(prevProps, prevState) {
 		console.log((this.state.systemCheckForm !== prevState.systemCheckForm));
 		if (this.state.systemCheckForm !== prevState.systemCheckForm) {
-    		// this.props.updateSystemCheckForm(this.state.systemCheckKey, this.state.systemCheckForm);
+    		this.props.updateSystemCheckForm(this.state.systemCheckKey, {...this.state.systemCheckForm});
   		}
 	};
 
@@ -40,7 +40,7 @@ class CreateSystemsCheck extends React.Component {
 			selectable: false,
 			vesselKey: key
 		});
-		sysCheckKey = this.props.addSystemCheckForm(this.state.systemCheckForm);
+		sysCheckKey = this.props.addSystemCheckForm(this.state.systemCheckForm, key);
 		this.setState({
 			systemCheckKey: sysCheckKey,
 		});
@@ -49,9 +49,18 @@ class CreateSystemsCheck extends React.Component {
 	updateSystemsCheck = (pkey, ckey, value) => {
 		let tempObj = {...this.state.systemCheckForm};
 		tempObj = dSniff(tempObj, pkey, ckey, value);
-		console.log(tempObj);
+		// console.log(tempObj);
 		this.setState({
 			systemCheckForm: tempObj
+		});
+	};
+
+	completeSystemsCheck = () => {
+		this.setState({
+			selectable: true,
+			systemCheckForm: object,
+			systemCheckKey: '0',
+			vesselKey: ''
 		});
 	};
 
@@ -71,12 +80,13 @@ class CreateSystemsCheck extends React.Component {
 					history={this.props.history}
 					selectable={this.state.selectable}
 					initializeForm={this.initializeForm}
+					completeSystemsCheck={this.completeSystemsCheck}
 					vessels={this.props.vessels}
 					vesselKey={this.state.vesselKey}
 				/>
 				<nav>
 					<ul className="pagination pagination-sm justify-content-center">
-					<li className="page-item"><Link disabled className="page-link" to={url + "/scDetails"}>Vessel Details</Link></li> 
+					<li className="page-item"><Link className="page-link" to={url + "/scDetails"}>Vessel Details</Link></li> 
 					<li className="page-item"><Link className="page-link" to={url + "/scHullCondition"}>Hull Condition</Link></li> 
 					<li className="page-item"><Link className="page-link" to={url + "/scRiggingCondition"}>Rigging Condition</Link></li> 
 					<li className="page-item"><Link className="page-link" to={url + "/scEngineCompartment"}>Engine Compartment</Link></li> 

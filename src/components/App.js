@@ -20,10 +20,10 @@ class App extends React.Component {
 			context: this,
 			state: 'vessels',
 		});
-		// this.ref = base.syncState('systemsChecks', {
-		// 	context: this,
-		// 	state: 'systemsChecks',
-		// });
+		this.ref = base.syncState('systemsChecks', {
+			context: this,
+			state: 'systemsChecks',
+		});
 		console.log('app mounted');
 	};
 
@@ -31,22 +31,22 @@ class App extends React.Component {
 		console.log('app un-mounted');
 	};
 
-	addSystemCheckForm = formObject => {
-		// const sysChecks = {this.state.systemsChecks};
-		// const key = `syscheck-${Date.now()}`;
-		// sysChecks[key] = formObject;
-		// this.setState({
-		// 	systemsChecks: sysChecks
-		// });
-		// return key;
+	addSystemCheckForm = (formObject) => {
+		const sysChecks = {...this.state.systemsChecks};
+		const key = `syscheck-${Date.now()}`;
+		sysChecks[key] = formObject;
+		this.setState({
+			systemsChecks: sysChecks
+		});
+		return key;
 	};
 
 	updateSystemCheckForm = (key, formObject) => {
-		// const sysChecks = {this.state.systemsChecks};
-		// sysChecks[key] = formObject;
-		// this.setState({
-		// 	systemsChecks: sysChecks
-		// });
+		const sysChecks = {...this.state.systemsChecks};
+		sysChecks[key] = formObject;
+		this.setState({
+			systemsChecks: sysChecks
+		});
 	};
 
 	addVessel = vessel => {
@@ -55,11 +55,6 @@ class App extends React.Component {
 		this.setState({
 			vessels
 		});
-	};
-
-	getVessel = vessel => {
-		const obj = this.state.vessels[vessel];
-		return obj;
 	};
 
 	addLogEntry = log => {
@@ -96,7 +91,6 @@ class App extends React.Component {
 								(props) => <SystemsCheck
 									addSystemCheckForm={this.addSystemCheckForm}
 									defUrl={'/systemsCheck'}
-									getVessel={this.getVessel}
 									location={props.location}
 									updateSystemCheckForm={this.updateSystemCheckForm}
 									vessels={this.state.vessels}

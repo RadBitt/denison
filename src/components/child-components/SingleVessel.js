@@ -3,10 +3,11 @@ import React from 'react';
 class SingleVessel extends React.Component {
 
 	render() {
-		const vesselObj = this.props.getVessel(this.props.vesselKey);
+		const vesselsCollection = this.props.vessels
+		const vesselObj = vesselsCollection[this.props.vesselKey];
 		return(
 			<div>
-				<h2>{vesselObj.vesselName}: Systems Checks</h2>
+				<h2>{vesselObj['vesselName']}: {this.props.subject}</h2>
 			</div>
 		);
 	}
