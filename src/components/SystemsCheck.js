@@ -22,6 +22,8 @@ class SytemsCheck extends React.Component {
 
 	};
 
+	vesselKeyRegEx = new RegExp('vessel-[0-9]*'); 
+
 	handleClick = event => {
 		if (event.target.id === '1')
 			this.setState({newSysChkLink: false})
@@ -30,13 +32,18 @@ class SytemsCheck extends React.Component {
 	};
 
 	render() {
+
+		let vesselKey = '...';
+		const url = this.props.location.pathname
+		if (url.match(this.vesselKeyRegEx) !== null) 
+			vesselKey = url.match(this.vesselKeyRegEx)[0];
+
 		let sysCheckLink;
 		if(this.state.newSysChkLink) {
 			sysCheckLink = <ul><li><Link onClick={this.handleClick} id='1' to={this.props.location.pathname + '/createSystemsCheck'}>New Systems-Check Form</Link></li></ul>
 		} else {
 			sysCheckLink = <ul><li><Link onClick={this.handleClick} id='2' to={this.props.location.pathname}>Back</Link></li></ul>
 		}
-		
 		return(
 			<div>
 				<h1>Systems Check</h1>
@@ -45,21 +52,21 @@ class SytemsCheck extends React.Component {
 					<Route path={this.props.location.pathname + '/createSystemsCheck' } render={
 						(props) => <CreateSystemsCheck 
 						{...props}
-						match={this.props.location.pathname}
 						addSystemCheckForm={this.props.addSystemCheckForm}
 						updateSystemCheckForm={this.props.updateSystemCheckForm}
 						vessels={this.props.vessels}
 					/>} />
-					<Route path={this.props.location.pathname + '/' + this.state.vesselKey}
+					<Route path={this.props.match.path + '/' + vesselKey}
 					render={
 						() => <SingleVessel 
-						getVessel={this.props.getVessel}
-						vesselKey={this.state.vesselKey}/>} />
-					<Route exact path={this.props.location.pathname}
+						vessels={this.props.vessels}
+						vesselKey={vesselKey}
+						subject={'Systems Checks'}
+					/>} />
+					<Route path={this.props.match.path}
 					render={
-						() => <VesselList 
-						location={this.props.location.pathname} 
-						updateVesselKey={this.updateVesselKey}
+						(props) => <VesselList
+						{...props}
 						vessels={this.props.vessels}/>
 					} />
 				</Switch>

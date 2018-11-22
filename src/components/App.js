@@ -89,15 +89,13 @@ class App extends React.Component {
 							} />
 							<Route path="/systemsCheck" render={
 								(props) => <SystemsCheck
+									{...props}
 									addSystemCheckForm={this.addSystemCheckForm}
-									defUrl={'/systemsCheck'}
-									location={props.location}
 									updateSystemCheckForm={this.updateSystemCheckForm}
 									vessels={this.state.vessels}
 								/>} />
 							<Route path="/vessels" render={
 								() => <Vessels 
-									match="/vessels"
 									addVessel={this.addVessel} 
 									vessels={this.state.vessels}
 								/>} />
