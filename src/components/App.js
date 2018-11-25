@@ -93,6 +93,7 @@ class App extends React.Component {
 									addSystemCheckForm={this.addSystemCheckForm}
 									updateSystemCheckForm={this.updateSystemCheckForm}
 									vessels={this.state.vessels}
+									systemsChecks={this.state.systemsChecks}
 								/>} />
 							<Route path="/vessels" render={
 								() => <Vessels 

@@ -71,7 +71,7 @@ class CreateSystemsCheck extends React.Component {
 			updateSystemsCheck: this.updateSystemsCheck
 		}
 
-		const url = this.props.match + '/createSystemsCheck';
+		const url = this.props.match.path;
 
 		return(
 			<div>

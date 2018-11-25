@@ -1,14 +1,14 @@
 import React from 'react';
-import object from '../../bin/sysCheckJson/DreamCatcher_Nov';
 
-class viewSystemCheck extends React.Component {
+class ViewSystemCheck extends React.Component {
 
 	render() {
-		console.log(object);
 		return(
-
-		)
+			<div>
+			<h2>View ViewSystemCheck</h2>
+			</div>
+		);
 	}
 }
 
-export default viewSystemCheck;
+export default ViewSystemCheck
